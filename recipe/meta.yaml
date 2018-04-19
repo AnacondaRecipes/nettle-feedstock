@@ -15,20 +15,18 @@ source:
     - dlopen_test.patch  # [osx]
 
 build:
-  number: 0
+  number: 1
   skip: True  # [win]  
 
 requirements:
   build:
     - m4
-    - gmp 6.1.*
-    - toolchain3
-  run:
-    - gmp 6.1.*
+    - {{ compiler('c') }}
+  host:
+    - gmp
 
 test:
   commands:
-    - conda inspect linkages -p $PREFIX nettle
     - test -f ${PREFIX}/lib/libnettle.so  # [linux]
     - test -f ${PREFIX}/lib/libhogweed.so  # [linux]
     - test -f ${PREFIX}/lib/libnettle.a  # [linux]
