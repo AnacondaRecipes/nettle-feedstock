@@ -22,6 +22,7 @@ requirements:
   build:
     - m4
     - {{ compiler('c') }}
+    - make
   host:
     - gmp
 
