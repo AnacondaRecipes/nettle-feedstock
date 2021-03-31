@@ -1,6 +1,6 @@
 {% set name = "nettle" %}
-{% set version = "3.4.1" %}
-{% set sha256 = "f941cf1535cd5d1819be5ccae5babef01f6db611f9b5a777bae9c7604b8a92ad" %}
+{% set version = "3.7.2" %}
+{% set sha256 = "8d2a604ef1cde4cd5fb77e422531ea25ad064679ff0adf956e78b3352e0ef162" %}
 
 package:
   name: {{ name|lower }}
