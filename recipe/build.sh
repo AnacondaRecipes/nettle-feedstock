@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # See: https://gitlab.com/gnutls/gnutls/issues/665
-export CPPFLAGS="${CPPFLAGS// -DNDEBUG/}"
-export CFLAGS="${CFLAGS// -DNDEBUG/}"
+export CPPFLAGS="${CPPFLAGS//-DNDEBUG/}"
+export CFLAGS="${CFLAGS//-DNDEBUG/}"
 
 declare -a configure_opts
 
