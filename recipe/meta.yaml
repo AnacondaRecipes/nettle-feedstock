@@ -10,8 +10,6 @@ source:
   fn: {{ name }}-{{ version }}.tar.gz
   url: https://ftp.gnu.org/gnu/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: {{ sha256 }}
-  patches:
-    - dlopen_test.patch  # [osx]
 
 build:
   number: 0
@@ -33,8 +31,8 @@ test:
   commands:
     - test -f ${PREFIX}/lib/libnettle${SHLIB_EXT}
     - test -f ${PREFIX}/lib/libhogweed${SHLIB_EXT}
-    - test -f ${PREFIX}/lib/libnettle.a
-    - test -f ${PREFIX}/lib/libhogweed.a
+    - test ! -f ${PREFIX}/lib/libnettle.a
+    - test ! -f ${PREFIX}/lib/libhogweed.a
   downstreams:
     - gnutls
 
