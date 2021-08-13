@@ -24,6 +24,7 @@ requirements:
     - autoconf
     - m4
     - make
+    - libtool
   host:
     - gmp
 
