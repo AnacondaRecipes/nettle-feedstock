@@ -14,10 +14,9 @@ build:
   # Nettle uses GNU autotools (configure/make) which doesn't natively support Windows MSVC toolchain.
   # It requires either MSYS2/MinGW or complex cross-compilation setup.
   skip: True  # [win]
-  ignore_run_exports:
-    from_package:
-      # This is only needed for the test suite
-      - ${{ compiler('cxx') }}
+  ignore_run_exports_from:
+    # This is only needed for the test suite
+    - {{ compiler('cxx') }}
   run_exports:
     # https://abi-laboratory.pro/?view=timeline&l=nettle
     - {{ pin_subpackage('nettle', max_pin='x.x') }}
