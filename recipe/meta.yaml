@@ -1,5 +1,5 @@
 {% set name = "nettle" %}
-{% set version = "3.10.2" %}
+{% set version = "4.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://ftp.gnu.org/gnu/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: fe9ff51cb1f2abb5e65a6b8c10a92da0ab5ab6eaf26e7fc2b675c45f1fb519b5
+  sha256: 3addbc00da01846b232fb3bc453538ea5468da43033f21bb345cb1e9073f5094
 
 build:
   number: 0
@@ -31,8 +31,9 @@ requirements:
     - make
     - libtool
   host:
-    # https://git.lysator.liu.se/nettle/nettle/-/blob/nettle_3.10.2_release_20250626/configure.ac?ref_type=tags#L270
-    # gmp >=6.1
+    # GMP-6.1.0 or later is needed
+    # https://git.lysator.liu.se/nettle/nettle/-/blob/nettle_4.0_release_20260205/configure.ac?ref_type=tags#L250
+    # Aggregate default is 6.3.0
     - gmp {{ gmp }}
 
 test:
